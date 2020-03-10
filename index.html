@@ -1067,7 +1067,7 @@
          */
 
     var err_cnt = 0;
-    const logger = (pageId, actionId) => {
+/*     const logger = (pageId, actionId) => {
         const message = { pageId, actionId };
         try {
             if (isIOS) {
@@ -1084,7 +1084,7 @@
             console.log('logEvent not found');
         }
     }
-    logger(logId, null);
+    logger(logId, null); */
     
     //<!-- Global site tag (gtag.js) - Google Analytics -->
     var s = document.createElement('script');
@@ -1100,7 +1100,7 @@
             //승차이력 랜딩
             $('.tap_myhistorybtn').click(function(){
                 gtag('event','tap_myhistorybtn',{'event_category':logId,'event_label':''});
-                logger(logId, 'tap_myhistorybtn');    
+              //  logger(logId, 'tap_myhistorybtn');    
                 location.href = 'tmaptaxi://riding_history';   
             })
                      
@@ -1109,7 +1109,7 @@
         // 내 쿠폰 랜딩
         $('.tap_registerbtn').click(function () {
             gtag('event','tap_registerbtn',{'event_category':logId,'event_label':''});
-            logger(logId, 'tap_registerbtn');    
+         //   logger(logId, 'tap_registerbtn');    
             location.href = 'tmaptaxi://apppay_guide';  
         });
         
@@ -1128,7 +1128,7 @@
             $('.popup_wrap').hide();
             $('.popup_text').attr('style', '');
             gtag('event','tap_confirm',{'event_category':logId,'event_label':''});
-            logger('/popup/event/RIDER_STAMP2019/complete', null);
+         //   logger('/popup/event/RIDER_STAMP2019/complete', null);
             //location.href = 'tmaptaxi://webview?url=https://mapp.tmaptaxi.com/user/coupons'; 
             location.href = 'tmaptaxi://webview?url=https://mapp.tmaptaxi.com/user/coupons';
         });
