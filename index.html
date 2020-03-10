@@ -1,37 +1,1154 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="ko">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+      rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>369 스탬프 이벤트</title>
+</head>
 
-You can use the [editor on GitHub](https://github.com/wackoagu/wackoagu.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    body {
+        width: 100%;
+        font-family: 'NotoSansKR';
+    }
 
-### Markdown
+    /*title_bg*/
+    .first_wrap {
+        width: 100%;
+        background-color: #6132CC;
+    }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    .first_section {
+        width: 100%;
+        text-align: center;
+        padding-top: 30px;
+        box-sizing: border-box;
+    }
 
-```markdown
-Syntax highlighted code block
+    .first_section img {
+        width: 90%;
+        position: relative;
+        z-index: 1;
+    }
 
-# Header 1
-## Header 2
-### Header 3
+    .bg_top img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 0;
+    }
 
-- Bulleted
-- List
+    /*title_bg*/
 
-1. Numbered
-2. List
+    /*stamp_coupon_click_page*/
+    .second_section {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        width: 90%;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 15px;
+    }
 
-**Bold** and _Italic_ and `Code` text
+    .second_section > h3 {
+        color: #4B2EA6;
+        font-size: 15px;
+        letter-spacing: -1.5px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
 
-[Link](url) and ![Image](src)
-```
+    .second_section_icons_wrap {
+        margin-top: 15px;
+        overflow: hidden;
+    }
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+    .second_section_icons li {
+        list-style: none;
+        display: inline-block;
+        width: 30%;
+        text-align: center;
+        position: relative;
+        height: 120px;
+    }
 
-### Jekyll Themes
+    /*before_use*/
+    .second_section_first_icon, .second_section_second_icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wackoagu/wackoagu.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    .stamp_on, .stamp_off {
+        width: 100px;
+    }
 
-### Support or Contact
+    .second_section_first_icon h4 {
+        position: absolute;
+        left: 0;
+        top: 22px;
+        right: 0;
+        margin: auto;
+        color: #fff;
+        font-size: 34px;
+    }
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    /*before_use*/
+
+    /*after_use*/
+    .second_section_second_icon {
+        opacity: 0;
+    }
+
+    .second_section_second_icon p {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #fff;
+        top: 56px;
+        font-size: 14px;
+        letter-spacing: -0.5px;
+        font-weight: 700;
+    }
+
+    .second_coupon {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 23px;
+        width: 65px;
+    }
+
+    .second_opacity_bg {
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+        width: 100px;
+        height: 100px;
+        background-color: rgba(24, 6, 121, 0.5);
+        border-radius: 100px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        z-index: 11;
+    }
+
+    .stamp {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 40px;
+        z-index: 11;
+    }
+
+    /*after_use*/
+    .second_section_last_icon {
+        opacity: 0;
+        z-index: 11;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(24, 6, 121, 0.5);
+        border-radius: 100px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .complete {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 65px;
+        top: 37px;
+        z-index: 1;
+    }
+
+    .double_icon {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        width: 40px;
+        z-index: 0;
+        z-index: 22;
+    }
+
+    .bg_bt {
+        width: 100%;
+        position: relative;
+        bottom: 0px;
+        left: 0;
+    }
+
+    .bg_bt img {
+        width: 100%;
+        vertical-align: bottom;
+    }
+
+    .tap_myhistorybtn {
+        width: 100px;
+        background: url('img/ic_arrow.png') right center no-repeat;
+        margin: 10px auto 20px;
+        background-size: 6px;
+    }
+
+    .tap_myhistorybtn p {
+        font-size: 17px;
+        display: inline-block;
+        letter-spacing: -2px;
+        margin-right: 5px;
+        font-weight: 500;
+    }
+
+    .tap_myhistorybtn img {
+        width: 6px;
+        vertical-align: middle;
+    }
+
+    /*stamp_coupon_click_page*/
+
+    /*content_explanation*/
+    .content_exp_wrap {
+        word-break: keep-all;
+        background: linear-gradient(to bottom, #4F28AD, #6233CD);
+        color: #fff;
+        overflow: hidden;
+        line-height: 20px;
+    }
+
+    .content_exp {
+        list-style: none;
+    }
+
+    .content_exp li {
+        padding: 0 20px;
+        letter-spacing: -.5px;
+    }
+
+    .content_exp_icon {
+        margin: 30px 0 20px;
+    }
+
+    .content_exp_icon img {
+        height: 27px;
+        vertical-align: middle;
+    }
+
+    .content_exp_text h5 {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .content_exp_text p {
+        font-size: 14px;
+    }
+
+    .tap_registerbtn {
+        box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border-radius: 50px;
+        height: 40px;
+        width: 300px;
+        margin: 30px auto 50px;
+        text-align: center;
+    }
+
+    .tap_registerbtn p {
+        display: inline-block;
+        color: #4B2EA6;
+        line-height: 40px;
+        font-weight: 900;
+        letter-spacing: -1px;
+        padding-right: 5px;
+    }
+
+    .tap_registerbtn img {
+        width: 6px;
+    }
+
+    .fw900 {
+        font-weight: 900;
+    }
+
+    .orange_900 {
+        color: #F2AF3B;
+    }
+
+    /*content_explanation*/
+
+    /*bridge_page*/
+    .bridge_tmap_page {
+        overflow: hidden;
+        width: 100%;
+        background-color: #b6b6b6;
+        box-sizing: border-box;
+        padding-top: 25px;
+    }
+
+    .bridge_tmap_top {
+        width: 100%;
+        overflow: hidden;
+        padding-left: 25px;
+        box-sizing: border-box;
+    }
+
+    .bridge_tmap_left {
+        width: 24%;
+        float: left;
+        margin-right: 20px;
+    }
+
+    .bridge_tmap_left img {
+        width: 100%;
+    }
+
+    .bridge_tmap_right {
+        color: #fff;
+        text-align: left;
+        float: left;
+        vertical-align: top;
+        letter-spacing: -0.5px;
+    }
+
+    .bridge_tmap_right h4 {
+        font-size: 14px;
+        font-weight: 700;
+        padding-bottom: 5px;
+    }
+
+    .bridge_tmap_right p {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .tap_downloadbtn {
+        box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        width: 230px;
+        height: 45px;
+        line-height: 45px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 30px;
+    }
+
+    .tap_downloadbtn p {
+        letter-spacing: -1px;
+        font-weight: 900;
+        color: #4B2EA6;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /*bridge_page*/
+
+    /*caution*/
+    .caution_wrap {
+        padding: 0 20px;
+        font-size: 12px;
+        padding-top: 40px;
+        word-break: keep-all;
+        letter-spacing: -.7px;
+    }
+
+    .caution_wrap h2 {
+        color: #6233CD;
+        font-size: 16px;
+    }
+
+    .caution_wrap h2 img {
+        width: 15px;
+        margin-right: 15px;
+    }
+
+    .first_caution {
+        margin-top: 20px;
+        padding-left: 15px;
+    }
+
+    .first_caution ul {
+        list-style: outside;
+    }
+
+    .first_caution ul li {
+        margin-bottom: 7px;
+    }
+
+    .second_caution {
+        color: #6233CD;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+
+    .second_caution h5 {
+        font-size: 12px;
+        margin-bottom: 7px;
+    }
+
+    .second_caution ul {
+        padding-left: 15px;
+    }
+
+    .second_caution ul li {
+        margin-bottom: 7px;
+    }
+
+    .third_caution {
+        margin-top: 20px;
+    }
+
+    .third_caution ul {
+        padding-left: 15px;
+    }
+
+    .third_caution ul li {
+        margin-bottom: 7px;
+    }
+
+    .blue900 {
+        font-weight: 900;
+        color: #017DC7;
+    }
+
+    /*caution*/
+
+    /*popup*/
+    .popup_wrap {
+        display: none;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .popup_wrap2 {
+        display: none;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .popup {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        color: #030303;
+        width: 90%;
+        transform: translateY(-50%);
+        border-radius: 20px;
+        overflow: hidden;
+        
+    }
+
+    .popup_text {
+        font-size: 19px;
+        letter-spacing: -1px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 175px;
+        }
+
+    .violet700 {
+        color: #4F28AD;
+        font-weight: 700;
+    }
+
+    .tap_confirm {
+        font-size: 18px;
+        color: #fff;
+        background-color: #4F28AD;
+        width: 100%;
+        height: 55px;
+        line-height: 55px;
+        position: absolute;
+        left: 0;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    /*popup*/
+
+    /*i-5se*/
+    .se_br {
+        display: none;
+    }
+
+    @media (max-width: 365px) {
+        .se_br {
+            display: inline;
+        }
+        .second_section_second_icon .date-info{
+            top: 44px !important; 
+            font-size: 10px !important; 
+        }
+
+        .second_section_icons li {
+            height: 100px;
+        }
+
+        .stamp_on, .stamp_off {
+            width: 80px;
+        }
+
+        .second_section_second_icon p {
+            top: 50px;
+            font-size: 12px;
+        }
+
+        .second_section_first_icon h4 {
+            top: 16px;
+            font-size: 30px;
+        }
+
+        .second_coupon {
+            top: 20px;
+            width: 60px;
+        }
+
+        .double_icon {
+            width: 35px;
+        }
+
+        .second_opacity_bg {
+            width: 90px;
+            height: 90px;
+        }
+
+        .tap_confirm {
+            height: 50px;
+        }
+
+        .popup {
+            /*height: 160px;*/
+        }
+
+        .popup_text {
+            font-size: 17px;
+
+
+        }
+
+        .bridge_tmap_right p {
+            font-size: 13px;
+        }
+
+        .bridge_tmap_top {
+            padding-left: 15px;
+        }
+
+        .bridge_tmap_left {
+            margin-right: 10px;
+        }
+    }
+
+    /*i-5se*/
+
+    .bridge_tmap_page {
+        display: none;
+    }
+
+    .second_section_second_icon .date-info {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: #fff;
+        top: 56px;
+        font-size: 12px;
+        letter-spacing: -0.5px;
+        font-weight: 700;
+        padding-top: 2.5px;
+    }
+    .caution_wrap {
+        padding-bottom: 30px !important;
+    }
+
+    span.violet700.arrow-span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    }
+    span.violet700.arrow-span img {
+        max-width: 12px;
+        margin-top: 2.25px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+</style>
+<body>
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+<div class="first_wrap">
+    <div class="bg_top">
+        <img class="bg_top" src="img/bg_top.png" alt="">
+    </div>
+
+    <div class="first_section">
+        <img src="img/title.png" alt="">
+    </div>
+
+    <div class="second_section">
+        <h3>T map 택시 <strong>앱결제 이용</strong> 시<br class="se_br"> 스탬프가 적립됩니다.</h3>
+        <div class="second_section_icons_wrap">
+            <ul class="second_section_icons">
+                <li class="second_section_icons-li second_section_icons-li-00">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_stamp_off.png" alt="">
+                        <h4>1</h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_stamp_on.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-01">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_stamp_off.png" alt="">
+                        <h4>2</h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_stamp_on.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-02 tap_couponbtn" data="THREE">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_coupon_off.png" alt="">
+                        <img class="second_coupon" src="img/Img_coupon.png" alt="">
+                        <h4></h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_coupon_on2.png" alt="">
+                        <img class="second_coupon" src="img/Img_coupon.png" alt="">
+                        <div class="second_opacity_bg">
+                            <img class="complete" src="img/coupon_receive.png" alt="" class="last_text">
+                        </div>
+                        <img class="stamp" src="img/img_stamp.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-03">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_stamp_off.png" alt="">
+                        <h4>4</h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_stamp_on.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-04">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_stamp_off.png" alt="">
+                        <h4>5</h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_stamp_on.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-05 tap_couponbtn"  data="SIX">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_coupon_off.png" alt="">
+                        <img class="second_coupon" src="img/Img_coupon.png" alt="">
+                        <img class="double_icon" src="img/ic_x2.png" alt="">
+                        <h4></h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_coupon_on2.png" alt="">
+                        <img class="second_coupon" src="img/Img_coupon.png" alt="">
+                        <img class="complete" src="img/coupon_receive.png" alt="" class="last_text">
+                        <div class="second_opacity_bg">
+                            <img class="complete" src="img/coupon_receive.png" alt="" class="last_text">
+                        </div>
+                        <img class="stamp" src="img/img_stamp.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-06">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_stamp_off.png" alt="">
+                        <h4>7</h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_stamp_on.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-07">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_stamp_off.png" alt="">
+                        <h4>8</h4>
+                    </div>
+                    <div class="second_section_second_icon">
+                        <img class="stamp_on" src="img/img_stamp_on.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+                </li>
+                <li class="second_section_icons-li second_section_icons-li-08 tap_couponbtn" data="NINE">
+                    <div class="second_section_first_icon">
+                        <img class="stamp_off" src="img/img_coupon_off.png" alt="">
+                        <img class="second_coupon" src="img/Img_coupon.png" alt="">
+                        <img class="double_icon" src="img/ic_x3.png" alt="">
+                        <h4></h4>
+                    </div>
+                    <div class="second_section_second_icon second_section_third_icon">
+                        <img class="stamp_on" src="img/img_coupon_on2.png" alt="">
+                        <img class="second_coupon" src="img/Img_coupon.png" alt="">
+                        <img class="complete" src="img/coupon_receive.png" alt="" class="last_text">
+                        <div class="second_opacity_bg">
+                            <img class="complete" src="img/coupon_receive.png" alt="" class="last_text">
+                        </div>
+                        <img class="stamp" src="img/img_stamp.png" alt="">
+                        <div class="date-info"><span class="usedMonth"></span>월<span class="usedDate"></span>일</div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <div class="tap_myhistorybtn">
+            <p>내 승차이력</p>
+        </div>
+    </div>
+    <div class="bg_bt">
+        <img src="img/bg_bottom.png" alt="">
+    </div>
+</div>
+<div class="content_exp_wrap">
+    <ul class="content_exp">
+        <li>
+            <div class="content_exp_icon"><img src="img/ic_date2.png" alt=""></div>
+            <div class="content_exp_text">
+                <h5>[스탬프 적립]</h5>
+                <p>2019년 11월 29일(금)~12월 29일(일)</p>
+                <h5>[쿠폰 교환 및 사용 기간]</h5>
+                <p> 2019년 11월 29일(금)~12월 31일(화)<br>(이 이벤트 페이지는 12월 31일(화)까지 조회할 수 있습니다.)</p>
+            </div>
+        </li>
+        <li>
+            <div class="content_exp_icon"><img src="img/ic_usage2.png" alt=""></div>
+            <div class="content_exp_text">
+                <h5> [스탬프 적립]</h5>
+                <p>스탬프 적립 기간 안에 ‘앱결제 택시호출’로 <br class="se_br">T map 택시를 이용해주세요.<br>하차 완료 시점에 스탬프가 자동 적립됩니다. </p>
+                <h5> [쿠폰 교환]</h5>
+                <p>스탬프 3, 6, 9개 적립하고 ‘쿠폰 받기’ 버튼을 눌러주세요.</p>
+            </div>
+        </li>
+        <li>
+            <div class="content_exp_icon"><img src="img/ic_profit2.png" alt=""></div>
+            <div class="content_exp_text">
+                <p><span class="fw900">3,000원 할인 쿠폰</span> <span class="orange_900">최대 6장</span>(2019년 12월 31일(화)까지 사용
+                    가능)</p>
+                <p><span class="fw900">3번째 스탬프 </span>적립 시 3,000원 할인 쿠폰 <span class="fw900">1장</span>,<br>
+                    <span class="fw900">6번째 스탬프 </span>적립 시 3,000원 할인 쿠폰 <span class="fw900">2장</span>,<br>
+                    <span class="fw900">9번째 스탬프 </span>적립 시 3,000원 할인 쿠폰 <span class="fw900">3장</span> 교환 가능</p>
+            </div>
+        </li>
+    </ul>
+    <div class="tap_registerbtn">
+        <p>T map 택시 앱결제가 처음이라면?</p> <img src="img/ic_arrow.png" alt="">
+    </div>
+</div>
+<div class="bridge_tmap_page">
+    <div class="bridge_tmap_top">
+        <div class="bridge_tmap_left"><img src="img/ic-logo.png" alt=""></div>
+        <div class="bridge_tmap_right">
+            <h4>T map 택시</h4>
+            <p>
+                T map 택시는 1등 내비게이션 T map을<br>
+                기반으로 정확하고 안전하게 고객님을<br>
+                모시는 택시 호출 앱입니다
+            </p>
+        </div>
+    </div>
+    <div class="tap_downloadbtn">
+        <p>T map 택시 다운로드</p>
+    </div>
+
+</div>
+<div class="caution_wrap">
+    <h2><img src="img/ic_ notice.png" alt="">꼭 확인하세요</h2>
+    <div class="first_caution">
+        <ul>
+            <li>스탬프는 스탬프 적립 기간 안에 ‘앱결제 택시호출’ 후 하차까지 완료한 경우에 적립됩니다.</li>
+            <li>쿠폰, T멤버십 등 할인을 적용했더라도 ‘앱결제 택시호출’ 후 하차 완료 시 스탬프가 적립됩니다.</li>
+            <li> 택시호출’ 후 카드 잔액 부족, 한도 초과 등의 이유로 현장결제 (기사님께 직접결제)로 변경되어도 하차 완료 시 스탬프가 적립됩니다.</li>
+            <li>‘앱결제 택시호출’ 후 탑승을 하지 않는 등의 이유로 하차가 완료되지 않으면스탬프가 적립되지 않습니다.</li>
+            <li>스탬프 적립 기간 안에 ‘앱결제 택시호출’을 했더라도, 스탬프 적립 종료일자정을 지나 하차 완료 시 스탬프가 적립되지 않습니다.</li>
+            <li>제휴사의 사정에 따라 일부 지역에서는 ‘앱결제 택시호출’을 이용할 수 없습니다.</li>
+        </ul>
+    </div>
+    <div class="second_caution">
+        <h5>[앱결제 택시호출 가능 지역]</h5>
+        <ul>
+            <li>서울특별시</li>
+            <li>광역시: 부산, 인천, 대구, 대전, 광주, 울산</li>
+            <li>경기지역: 가평군, 고양시, 과천시, 광명시, 광주시, 구리시, 군포시, 김포시,
+                동두천시, 부천시, 성남시, 수원시, 시흥시, 안산시, 안성시, 안양시,
+                양주시, 양평군, 여주시, 연천군, 오산시, 용인시, 의왕시, 의정부시,
+                이천시, 파주시, 포천시, 평택시, 하남시, 화성시
+            </li>
+            <li>강원지역: 강릉시, 원주시, 춘천시, 평창군</li>
+            <li>경상지역: 경북 경산시, 경북 경주시, 경북 구미시, 경북 칠곡군, 경북 포항시,
+                경남 김해시, 경남 양산시, 경남 창원시
+            </li>
+            <li>전라지역: 전북 완주군, 전북 익산시, 전북 전주시, 전남 나주시, 전남 목포시,
+                전남 여수시, 전남 화순군
+            </li>
+            <li>충청지역: 충북 괴산군, 충북 제천시, 충북 증평군, 충북 청주시, 충북 충주시,
+                충남 계룡시, 충남 서산시, 충남 아산시, 충남 천안시
+            </li>
+            <li>세종특별자치시</li>
+            <li>제주특별자치도</li>
+        </ul>
+    </div>
+    <div class="third_caution">
+        <ul>
+            <li>스탬프는 9개 적립 이후 다시 0개로 돌아가지 않습니다.</li>
+            <li>휴대폰 번호변경, 기기변경 시 사용하던 T아이디로 로그인하면 이전에 적립된 스탬프를 확인할 수 있습니다.</li>
+            <li>T map 택시 회원 탈퇴 시 적립된 스탬프는 모두 삭제되며 되돌릴 수 없습니다.</li>
+            <li>‘369 스탬프 이벤트 할인 쿠폰’은 현금으로 교환하거나 환불받을 수 없습니다.</li>
+            <li>‘369 스탬프 이벤트 할인 쿠폰’은 T map 택시 앱에서 발급한 다른 쿠폰 또는 다른 할인 혜택과 함께 사용할 수 없습니다.</li>
+            <li>‘369 스탬프 이벤트 할인 쿠폰’은 앱결제 호출 시 할인 쿠폰을 선택하고 사용해야 하며, 이후에는 기사님께 쿠폰 사용을 신청하더라도 할인받을 수 없습니다.</li>
+            <li> ‘369 스탬프 이벤트 할인 쿠폰’을 정상적으로 선택하여 호출 했더라도 결제방식이 앱결제에서 현장 결제로 변경될 경우 쿠폰 할인이 적용 되지 않습니다.</li>
+            <li>기간 안에 사용하지 못한 ‘369 스탬프 이벤트 할인 쿠폰’의 사용 기간은 연장할 수 없습니다.</li>
+            <li>택시호출 시 1개의 ‘369 스탬프 이벤트 할인 쿠폰’만 사용 가능하며, 쿠폰 1개의 금액을 여러 번 나누어 사용할 수 없습니다.</li>
+            <li>이용한 택시비가 ‘369 스탬프 이벤트 할인 쿠폰’ 금액보다 낮은 경우에도 남은 금액은 다시 사용하거나 환불받을 수 없습니다.</li>
+            <li>앱결제(SK pay)를 이용할 경우 신용카드사의 정책에 따라 신용카드 교통비 할인이 적용되지 않을 수도 있습니다.</li>
+            <li>비정상적인 방법으로 스탬프를 적립하거나 쿠폰을 획득하는 경우 이 이벤트와 관련된 모든 스탬프와 쿠폰은 회수되며 T map 택시 서비스 이용이 제한될 수 있습니다.</li>
+            <li>이 이벤트는 SK텔레콤의 사정에 따라 사전 안내 없이 변경되거나 일찍 종료될 수 있습니다.</li>
+            <li>문의: <span class="blue900"> 1:1 문의 게시판</span></li>
+        </ul>
+    </div>
+</div>
+<div class="popup_wrap">
+    <div class="popup">
+        <div class="popup_text">
+            <p>
+                쿠폰이 발급되었습니다.<br>
+                발급된 쿠폰은 <span class="violet700 arrow-span">‘내 쿠폰’</span> 에서<br>
+                확인할 수 있습니다.
+            </p>
+        </div>
+        <div class="tap_confirm">확인</div>
+    </div>
+</div>
+<div class="popup_wrap2">
+    <div class="popup">
+        <div class="popup_text">
+            <p>
+                <br>쿠폰이 발급되었습니다.<br>
+               		발급된 쿠폰은 <span class="violet700">‘메뉴 ￫ 내 쿠폰’</span>에서<br>
+                확인할 수 있습니다.
+            </div>
+        </div>
+        <div class="tap_confirm">확인</div>
+    </div>
+</div>
+
+<!--
+<div class="f-params" style="padding:100px;">
+    <div class="f-appVersion"></div>
+
+    <div class="f-token"></div>
+
+    <div class="f-osType"></div>
+
+    <div class="f-deviceId"></div>
+
+</div>
+-->
+
+
+</body>
+<script type="text/javascript" src="./js/common_taxi.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {   
+
+        function getUrlParams() {
+            var params = {};
+            window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
+            return params;
+        }
+        fParams = getUrlParams();
+
+        /*
+        $('.f-appVersion').text("appVersion : " + fParams.appVersion);
+        $('.f-token').text("token: " + fParams.accessToken + "+" + fParams.passengerId);
+        $('.f-osType').text("osType : " + fParams.osType);
+        $('.f-deviceId').text("deviceId: "+fParams.deviceId);
+        */
+
+        var token = fParams.accessToken;
+        var deviceId = fParams.deviceId;
+        var osType = fParams.osType;
+        var appVersion = fParams.appVersion;
+
+        var ContentType = "application/json";
+     /*   
+        var token = 'BYPASSTOKEN+2000008552';
+        var deviceId = 'BYPASSDEVICEID';
+        var osType = 'ANDROID';
+        var appVersion = '0.00.007';
+    */
+        //조회
+            $.ajax({
+                type: 'GET',
+                url: "https://mapp.tmaptaxi.com/taxi/user-app/api/v1/promotion/coupon/stamp",
+                crossDomain: true,
+                headers: {
+                    'accessToken': token,
+                    'deviceId': deviceId,
+                    'osType': osType,
+                    'appVersion': appVersion,
+                    'Content-Type': ContentType
+                },
+                dataType: 'json',
+                cache: false,
+                data: {'promotionCode': 'RIDER_STAMP2019'},
+                success: function (data) {
+                    //console.log('stampLength: '+ data.data.stampTimes.length);
+                    //console.log(data.data.stampTimes.length);
+                    var stampTimesLength = data.data.stampTimes.length;
+                    var stampCouponLength = data.data.stampCouponInfos.length;
+                    var stampArray = data.data.stampTimes;
+                    var usedArrayDate = new Array();
+                    var usedArray = new Array();
+                    
+
+                    //쿠폰발급 확인
+                    var stampCouponInfos = data.data.stampCouponInfos;
+                    couponCheck();
+                    setTimeout(function() {
+                        couponCheck();
+                    }, 500);
+                    function couponCheck(){
+                        $.each(stampCouponInfos, function(k, v) {
+                            if(v.stampType=="THREE") {
+                                $('.second_section_icons-li-02 .complete').attr('src', 'img/coupon_complete.png');
+                                $('.second_section_icons-li-02').find('second_opacity_bg').attr('style', ' box-shadow: none; ');
+                                $('.second_section_icons-li-02').find('.stamp').attr('style', 'opacity:0;');
+                            }else if(v.stampType=="SIX"){
+                                $('.second_section_icons-li-05 .complete').attr('src', 'img/coupon_complete.png');
+                                $('.second_section_icons-li-05').find('second_opacity_bg').attr('style', ' box-shadow: none; ');
+                                $('.second_section_icons-li-05').find('.stamp').attr('style', 'opacity:0;');
+                            }else if(v.stampType=="NINE"){
+                                $('.second_section_icons-li-08 .complete').attr('src', 'img/coupon_complete.png');
+                                $('.second_section_icons-li-08').find('second_opacity_bg').attr('style', ' box-shadow: none; ');
+                                $('.second_section_icons-li-08').find('.stamp').attr('style', 'opacity:0;');
+                            }
+                        });
+                    } // end function couponCheck()
+
+                    // 스탬프 날짜
+                    if (stampTimesLength > 0) {
+
+                        var i = 0;
+                        var usedMonth = "";
+                        var usedDate = "";
+                        while (i < stampTimesLength) {
+                            var ff = stampArray[i];				
+						
+                            var mm = ff.substr(5,2);
+                            var dd = ff.substr(8,2); 
+
+                            /*
+                            usedArrayDate.push(new Date(stampArray[i]));
+                            usedArray.push(usedArrayDate[i]);
+                            usedMonth = usedArrayDate[i].getMonth() + 1;
+                            usedDate = usedArrayDate[i].getDate();
+                            */
+
+                            $('.second_section_icons-li-0' + i + ' .second_section_second_icon').attr('style', 'opacity:1 !important;');
+                            // 날짜 채우기
+                            $('.second_section_icons-li-0' + i + ' .usedMonth').text(mm);
+                            $('.second_section_icons-li-0' + i + ' .usedDate').text(dd);
+                            
+                            i++;
+                        }
+
+                    }
+
+                    //369 쿠폰 발급
+                    if (stampTimesLength >= 2) {
+                        $('.tap_couponbtn').click(function () {
+                            gtag('event','tap_downloadbtn',{'event_category':logId,'event_label':''});
+                            logger(logId, 'tap_couponbtn'); 
+                            $.ajax({
+                                type: 'POST',
+                                url: "https://mapp.tmaptaxi.com/taxi/user-app/api/v1/promotion/coupon/stamp",
+                                crossDomain: true,
+                                headers: {
+                                    'accessToken': token,
+                                    'deviceId': deviceId,
+                                    'osType': osType,
+                                    'appVersion': appVersion,
+                                    'Content-Type': ContentType
+                                },
+                                dataType: 'json',
+                                cache: false,
+                                //<li class="second_section_icons-li second_section_icons-li-02 tap_couponbtn" data="THREE">
+                                data: JSON.stringify({
+                                    "promotionCode": "RIDER_STAMP2019",
+                                    "stampType": $(this).attr('data')
+                                }),
+                                success: function (data) {
+                                    // 쿠폰발급 팝업 내용
+                                    $('.popup_wrap').find('p').html("<br>쿠폰이 발급되었습니다.<br>발급된 쿠폰은 <span class='violet700'>‘메뉴 ￫ 내 쿠폰’</span>에서<br>확인할 수 있습니다.");
+                                    $('.popup_wrap').attr('style', 'display:block');
+
+                                },
+                                error: function (request, status, error, data) {
+                                    console.log(":" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                                    var errorMessage = JSON.parse(request.responseText);
+                                    if (status == "error") {
+                                        // 쿠폰발급 팝업 내용
+                                        //$('.popup_wrap2').find('p').html(errorMessage.data.message);
+                                        //$('.popup_wrap2 .popup_text').attr('style', 'display: flex; justify-content: center; align-items: center; height: 71%;');
+                                        //$('.popup_wrap2').attr('style', 'display:block');
+                                        couponCheck();
+                                    }
+
+                                }//error
+
+                            });//end 369 쿠폰 발급 ajax
+
+                        });
+                    }
+
+                }, // end success
+
+                error: function (request, status, error) {
+                    //console.log("Status:" + request.status + "\n" + "Response Text:" + request.responseText + "\n" + "Error:" + error);
+                    console.log("Status:" + request.status + "\n" + "Response Text:" + request.responseText + "\n" + "Error:" + error);
+                }// end error
+
+            });
+        
+    var logId = "/event/detail/RIDER_STAMP2019";
+    var hostStr = window.location.host;
+    var gaid = "UA-158761077-1";
+
+        /**
+         * 
+         * 인앱 로그 함수
+         */
+
+    var err_cnt = 0;
+    const logger = (pageId, actionId) => {
+        const message = { pageId, actionId };
+        try {
+            if (isIOS) {
+                window.webkit.messageHandlers.tts.postMessage(message);
+            } else {
+                window.tts.logEvent(pageId, actionId);
+            }
+        } catch (e) {
+            if(err_cnt == 5) return;
+            err_cnt++;
+            setTimeout(function(){
+                logger(pageId, actionId);
+            }, 100);
+            console.log('logEvent not found');
+        }
+    }
+    logger(logId, null);
+    
+    //<!-- Global site tag (gtag.js) - Google Analytics -->
+    var s = document.createElement('script');
+            s.src = "https://www.googletagmanager.com/gtag/js?id="+gaid;
+            document.getElementsByTagName("head")[0].appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag()
+            {dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', gaid, {'page_path': logId});
+
+  
+            //승차이력 랜딩
+            $('.tap_myhistorybtn').click(function(){
+                gtag('event','tap_myhistorybtn',{'event_category':logId,'event_label':''});
+                logger(logId, 'tap_myhistorybtn');    
+                location.href = 'tmaptaxi://riding_history';   
+            })
+                     
+            
+
+        // 내 쿠폰 랜딩
+        $('.tap_registerbtn').click(function () {
+            gtag('event','tap_registerbtn',{'event_category':logId,'event_label':''});
+            logger(logId, 'tap_registerbtn');    
+            location.href = 'tmaptaxi://apppay_guide';  
+        });
+        
+        // T아이디 연결 위자드 랜딩
+        $('.tap_registerbtn').click(function () {
+            
+        });
+
+        // 1:1문의 게시판 랜딩
+        $('body > div.caution_wrap > div.third_caution > ul > li:nth-child(14) > span').click(function () {
+            location.href = 'tmaptaxi://customer_center_board';
+        });
+
+        /*popup_bt tap_confirm*/
+        $('.tap_confirm').click(function(){
+            $('.popup_wrap').hide();
+            $('.popup_text').attr('style', '');
+            gtag('event','tap_confirm',{'event_category':logId,'event_label':''});
+            logger('/popup/event/RIDER_STAMP2019/complete', null);
+            //location.href = 'tmaptaxi://webview?url=https://mapp.tmaptaxi.com/user/coupons'; 
+            location.href = 'tmaptaxi://webview?url=https://mapp.tmaptaxi.com/user/coupons';
+        });
+
+        $('.popup_wrap2 .tap_confirm').on('click.tap_confirm', function () {
+            $('.popup_wrap2').hide();
+            $('.popup_wrap2 .popup_text').attr('style', '');
+        });
+        /*popup_bt tap_confirm*/
+
+        /*tap_downloadbtn*/
+        $('.tap_downloadbtn').on('click.tap_downloadbtn', function () {
+            location.href = 'https://OdQ1CadfWEe5TCfCcyvodQ.adtouch.adbrix.io/api/v1/click/EPlnVRmaR0GILHEdrqG7ZA';
+        });
+        /*tap_downloadbtn*/
+
+    }); 
+
+
+</script>
+
+
+</html>
