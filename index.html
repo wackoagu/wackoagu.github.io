@@ -924,7 +924,7 @@
         var appVersion = '0.00.007';
     */
         //조회
-            $.ajax({
+/*             $.ajax({
                 type: 'GET',
                 url: "https://mapp.tmaptaxi.com/taxi/user-app/api/v1/promotion/coupon/stamp",
                 crossDomain: true,
@@ -984,12 +984,12 @@
                             var mm = ff.substr(5,2);
                             var dd = ff.substr(8,2); 
 
-                            /*
-                            usedArrayDate.push(new Date(stampArray[i]));
-                            usedArray.push(usedArrayDate[i]);
-                            usedMonth = usedArrayDate[i].getMonth() + 1;
-                            usedDate = usedArrayDate[i].getDate();
-                            */
+                            
+                            //usedArrayDate.push(new Date(stampArray[i]));
+                            //usedArray.push(usedArrayDate[i]);
+                            //usedMonth = usedArrayDate[i].getMonth() + 1;
+                            //usedDate = usedArrayDate[i].getDate();
+                            
 
                             $('.second_section_icons-li-0' + i + ' .second_section_second_icon').attr('style', 'opacity:1 !important;');
                             // 날짜 채우기
@@ -1055,7 +1055,7 @@
                     console.log("Status:" + request.status + "\n" + "Response Text:" + request.responseText + "\n" + "Error:" + error);
                 }// end error
 
-            });
+            }); */
         
     var logId = "/event/detail/RIDER_STAMP2019";
     var hostStr = window.location.host;
