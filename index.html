@@ -617,7 +617,9 @@
     <div class="first_section">
         <img src="img/title.png" alt="">
     </div>
-
+    <div class="btn-wrap">
+        <a id="Tap_goyohantaxi" class="btn-mid-arrow">고요한 택시 영상 보기<i class="ico ico-btn-arrow-mid"></i></a>
+    </div>
     <div class="second_section">
         <h3>T map 택시 <strong>앱결제 이용</strong> 시<br class="se_br"> 스탬프가 적립됩니다.</h3>
         <div class="second_section_icons_wrap">
@@ -904,12 +906,6 @@
         }
         fParams = getUrlParams();
 
-        /*
-        $('.f-appVersion').text("appVersion : " + fParams.appVersion);
-        $('.f-token').text("token: " + fParams.accessToken + "+" + fParams.passengerId);
-        $('.f-osType').text("osType : " + fParams.osType);
-        $('.f-deviceId').text("deviceId: "+fParams.deviceId);
-        */
 
         var token = fParams.accessToken;
         var deviceId = fParams.deviceId;
@@ -917,147 +913,8 @@
         var appVersion = fParams.appVersion;
 
         var ContentType = "application/json";
-     /*   
-        var token = 'BYPASSTOKEN+2000008552';
-        var deviceId = 'BYPASSDEVICEID';
-        var osType = 'ANDROID';
-        var appVersion = '0.00.007';
-    */
-        //조회
-/*             $.ajax({
-                type: 'GET',
-                url: "https://mapp.tmaptaxi.com/taxi/user-app/api/v1/promotion/coupon/stamp",
-                crossDomain: true,
-                headers: {
-                    'accessToken': token,
-                    'deviceId': deviceId,
-                    'osType': osType,
-                    'appVersion': appVersion,
-                    'Content-Type': ContentType
-                },
-                dataType: 'json',
-                cache: false,
-                data: {'promotionCode': 'RIDER_STAMP2019'},
-                success: function (data) {
-                    //console.log('stampLength: '+ data.data.stampTimes.length);
-                    //console.log(data.data.stampTimes.length);
-                    var stampTimesLength = data.data.stampTimes.length;
-                    var stampCouponLength = data.data.stampCouponInfos.length;
-                    var stampArray = data.data.stampTimes;
-                    var usedArrayDate = new Array();
-                    var usedArray = new Array();
-                    
 
-                    //쿠폰발급 확인
-                    var stampCouponInfos = data.data.stampCouponInfos;
-                    couponCheck();
-                    setTimeout(function() {
-                        couponCheck();
-                    }, 500);
-                    function couponCheck(){
-                        $.each(stampCouponInfos, function(k, v) {
-                            if(v.stampType=="THREE") {
-                                $('.second_section_icons-li-02 .complete').attr('src', 'img/coupon_complete.png');
-                                $('.second_section_icons-li-02').find('second_opacity_bg').attr('style', ' box-shadow: none; ');
-                                $('.second_section_icons-li-02').find('.stamp').attr('style', 'opacity:0;');
-                            }else if(v.stampType=="SIX"){
-                                $('.second_section_icons-li-05 .complete').attr('src', 'img/coupon_complete.png');
-                                $('.second_section_icons-li-05').find('second_opacity_bg').attr('style', ' box-shadow: none; ');
-                                $('.second_section_icons-li-05').find('.stamp').attr('style', 'opacity:0;');
-                            }else if(v.stampType=="NINE"){
-                                $('.second_section_icons-li-08 .complete').attr('src', 'img/coupon_complete.png');
-                                $('.second_section_icons-li-08').find('second_opacity_bg').attr('style', ' box-shadow: none; ');
-                                $('.second_section_icons-li-08').find('.stamp').attr('style', 'opacity:0;');
-                            }
-                        });
-                    } // end function couponCheck()
-
-                    // 스탬프 날짜
-                    if (stampTimesLength > 0) {
-
-                        var i = 0;
-                        var usedMonth = "";
-                        var usedDate = "";
-                        while (i < stampTimesLength) {
-                            var ff = stampArray[i];				
-						
-                            var mm = ff.substr(5,2);
-                            var dd = ff.substr(8,2); 
-
-                            
-                            //usedArrayDate.push(new Date(stampArray[i]));
-                            //usedArray.push(usedArrayDate[i]);
-                            //usedMonth = usedArrayDate[i].getMonth() + 1;
-                            //usedDate = usedArrayDate[i].getDate();
-                            
-
-                            $('.second_section_icons-li-0' + i + ' .second_section_second_icon').attr('style', 'opacity:1 !important;');
-                            // 날짜 채우기
-                            $('.second_section_icons-li-0' + i + ' .usedMonth').text(mm);
-                            $('.second_section_icons-li-0' + i + ' .usedDate').text(dd);
-                            
-                            i++;
-                        }
-
-                    }
-
-                    //369 쿠폰 발급
-                    if (stampTimesLength >= 2) {
-                        $('.tap_couponbtn').click(function () {
-                            gtag('event','tap_downloadbtn',{'event_category':logId,'event_label':''});
-                            logger(logId, 'tap_couponbtn'); 
-                            $.ajax({
-                                type: 'POST',
-                                url: "https://mapp.tmaptaxi.com/taxi/user-app/api/v1/promotion/coupon/stamp",
-                                crossDomain: true,
-                                headers: {
-                                    'accessToken': token,
-                                    'deviceId': deviceId,
-                                    'osType': osType,
-                                    'appVersion': appVersion,
-                                    'Content-Type': ContentType
-                                },
-                                dataType: 'json',
-                                cache: false,
-                                //<li class="second_section_icons-li second_section_icons-li-02 tap_couponbtn" data="THREE">
-                                data: JSON.stringify({
-                                    "promotionCode": "RIDER_STAMP2019",
-                                    "stampType": $(this).attr('data')
-                                }),
-                                success: function (data) {
-                                    // 쿠폰발급 팝업 내용
-                                    $('.popup_wrap').find('p').html("<br>쿠폰이 발급되었습니다.<br>발급된 쿠폰은 <span class='violet700'>‘메뉴 ￫ 내 쿠폰’</span>에서<br>확인할 수 있습니다.");
-                                    $('.popup_wrap').attr('style', 'display:block');
-
-                                },
-                                error: function (request, status, error, data) {
-                                    console.log(":" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-                                    var errorMessage = JSON.parse(request.responseText);
-                                    if (status == "error") {
-                                        // 쿠폰발급 팝업 내용
-                                        //$('.popup_wrap2').find('p').html(errorMessage.data.message);
-                                        //$('.popup_wrap2 .popup_text').attr('style', 'display: flex; justify-content: center; align-items: center; height: 71%;');
-                                        //$('.popup_wrap2').attr('style', 'display:block');
-                                        couponCheck();
-                                    }
-
-                                }//error
-
-                            });//end 369 쿠폰 발급 ajax
-
-                        });
-                    }
-
-                }, // end success
-
-                error: function (request, status, error) {
-                    //console.log("Status:" + request.status + "\n" + "Response Text:" + request.responseText + "\n" + "Error:" + error);
-                    console.log("Status:" + request.status + "\n" + "Response Text:" + request.responseText + "\n" + "Error:" + error);
-                }// end error
-
-            }); */
-        
-    var logId = "/event/detail/RIDER_STAMP2019";
+    var logId = "wackoagu.github.io";
     var hostStr = window.location.host;
     var gaid = "UA-158761077-1";
 
@@ -1067,24 +924,7 @@
          */
 
     var err_cnt = 0;
-/*     const logger = (pageId, actionId) => {
-        const message = { pageId, actionId };
-        try {
-            if (isIOS) {
-                window.webkit.messageHandlers.tts.postMessage(message);
-            } else {
-                window.tts.logEvent(pageId, actionId);
-            }
-        } catch (e) {
-            if(err_cnt == 5) return;
-            err_cnt++;
-            setTimeout(function(){
-                logger(pageId, actionId);
-            }, 100);
-            console.log('logEvent not found');
-        }
-    }
-    logger(logId, null); */
+
     
     //<!-- Global site tag (gtag.js) - Google Analytics -->
     var s = document.createElement('script');
@@ -1096,54 +936,12 @@
             gtag('js', new Date());
             gtag('config', gaid, {'page_path': logId});
 
-  
-            //승차이력 랜딩
-            $('.tap_myhistorybtn').click(function(){
-                gtag('event','tap_myhistorybtn',{'event_category':logId,'event_label':''});
-              //  logger(logId, 'tap_myhistorybtn');    
-                location.href = 'tmaptaxi://riding_history';   
-            })
-                     
-            
-
-        // 내 쿠폰 랜딩
-        $('.tap_registerbtn').click(function () {
-            gtag('event','tap_registerbtn',{'event_category':logId,'event_label':''});
-         //   logger(logId, 'tap_registerbtn');    
-            location.href = 'tmaptaxi://apppay_guide';  
-        });
-        
-        // T아이디 연결 위자드 랜딩
-        $('.tap_registerbtn').click(function () {
-            
-        });
-
-        // 1:1문의 게시판 랜딩
-        $('body > div.caution_wrap > div.third_caution > ul > li:nth-child(14) > span').click(function () {
-            location.href = 'tmaptaxi://customer_center_board';
-        });
-
-        /*popup_bt tap_confirm*/
-        $('.tap_confirm').click(function(){
-            $('.popup_wrap').hide();
-            $('.popup_text').attr('style', '');
-            gtag('event','tap_confirm',{'event_category':logId,'event_label':''});
-         //   logger('/popup/event/RIDER_STAMP2019/complete', null);
-            //location.href = 'tmaptaxi://webview?url=https://mapp.tmaptaxi.com/user/coupons'; 
-            location.href = 'tmaptaxi://webview?url=https://mapp.tmaptaxi.com/user/coupons';
-        });
-
-        $('.popup_wrap2 .tap_confirm').on('click.tap_confirm', function () {
-            $('.popup_wrap2').hide();
-            $('.popup_wrap2 .popup_text').attr('style', '');
-        });
-        /*popup_bt tap_confirm*/
-
-        /*tap_downloadbtn*/
-        $('.tap_downloadbtn').on('click.tap_downloadbtn', function () {
-            location.href = 'https://OdQ1CadfWEe5TCfCcyvodQ.adtouch.adbrix.io/api/v1/click/EPlnVRmaR0GILHEdrqG7ZA';
-        });
-        /*tap_downloadbtn*/
+            //고요한 택시 영상 보기
+            $('#Tap_goyohantaxi').click(function () {
+                gtag('event','Tap_goyohantaxi',{'event_category':logId,'event_label':''});
+               // logger(logId, 'Tap_goyohantaxi');
+                location.href = 'https://www.naver.com/';
+            });
 
     }); 
 
