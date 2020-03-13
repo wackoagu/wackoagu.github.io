@@ -35,8 +35,21 @@
 
 
     var logId = "wackoagu.github.io";
-    var hostStr = window.location.host;
-    var gaid = "UA-158761077-1";
+    var domain = window.location.hostname;
+    //var gaid = "UA-158761077-1";
+
+    var gaid = "";
+    if(domain.indexOf("qa-event") >= 0 || domain.indexOf("dev-event") >= 0 ||
+        domain.indexOf("event-dev") >= 0 || domain.indexOf("event-stg") >= 0 || domain.indexOf("localhost") >= 0
+        || domain.indexOf("github.io") >= 0
+    	){
+        //GA 추적코드(앱 QA, DEV)
+        gaid = "UA-158761077-1";
+    }else{
+        //GA 추적코드(앱 상용)
+        gaid = "UA-121235809-1";
+    }
+    
 
 
     
