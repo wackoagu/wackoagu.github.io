@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a81d917-fe62-4aea-bf87-891f146df014" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="testbranch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Z492JTUAKrBgKFro06W1aqK1BA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a81d917-fe62-4aea-bf87-891f146df014" name="Default Changelist" comment="" />
+      <created>1584087290822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584087290822</updated>
+      <workItem from="1584087294772" duration="550000" />
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1584087352304</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584087352304</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2584" y="0" key="CommitChangelistDialog2" timestamp="1584087351134">
+      <screen x="1920" y="0" width="1858" height="1080" />
+    </state>
+    <state x="2584" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1858.1080@1920.0.1858.1080" timestamp="1584087351134" />
+    <state x="2753" y="152" key="FileChooserDialogImpl" timestamp="1584087534316">
+      <screen x="1920" y="0" width="1858" height="1080" />
+    </state>
+    <state x="2753" y="152" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1858.1080@1920.0.1858.1080" timestamp="1584087534316" />
+    <state x="2793" y="276" key="Github.CreateGistDialog" timestamp="1584087540788">
+      <screen x="1920" y="0" width="1858" height="1080" />
+    </state>
+    <state x="2793" y="276" key="Github.CreateGistDialog/0.0.1536.824/1920.0.1858.1080@1920.0.1858.1080" timestamp="1584087540788" />
+    <state x="2321" y="106" width="1305" height="583" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1584087571127">
+      <screen x="1920" y="0" width="1858" height="1080" />
+    </state>
+    <state x="2321" y="106" width="1305" height="583" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/1920.0.1858.1080@1920.0.1858.1080" timestamp="1584087571127" />
+    <state x="2757" y="188" key="git4idea.merge.GitMergeDialog" timestamp="1584087370803">
+      <screen x="1920" y="0" width="1858" height="1080" />
+    </state>
+    <state x="2757" y="188" key="git4idea.merge.GitMergeDialog/0.0.1536.824/1920.0.1858.1080@1920.0.1858.1080" timestamp="1584087370803" />
+  </component>
+</project>
